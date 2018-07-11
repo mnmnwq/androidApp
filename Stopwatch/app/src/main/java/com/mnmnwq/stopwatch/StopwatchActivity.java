@@ -24,14 +24,14 @@ public class StopwatchActivity extends Activity {
         runTimer();
     }
 
-    protected void onStop(){  //活动不可见
-        super.onStop();
+    protected void onPause(){  //活动不可见
+        super.onPause();
         wasRunning = running;
         running = false;
     }
 
-    protected void onStart(){
-        super.onStart();
+    protected void onResume(){
+        super.onResume();
         if(wasRunning){
             running = true;
         }
