@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class StopwatchActivity extends Activity {
     private int seconds = 0;  //秒数
     private boolean running;  //控制运行
+    private boolean wasRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,13 +19,28 @@ public class StopwatchActivity extends Activity {
         if(savedInstanceState != null){  //保留状态
             seconds = savedInstanceState.getInt("seconds");
             running = savedInstanceState.getBoolean("running");
+            wasRunning = savedInstanceState.getBoolean("wasRunning");
         }
         runTimer();
+    }
+
+    protected void onStop(){  //活动不可见
+        super.onStop();
+        wasRunning = running;
+        running = false;
+    }
+
+    protected void onStart(){
+        super.onStart();
+        if(wasRunning){
+            running = true;
+        }
     }
 
     public void onSaveInstanceState(Bundle savedInstanceState){
         savedInstanceState.putInt("seconds",seconds);
         savedInstanceState.putBoolean("running",running);
+        savedInstanceState.putBoolean("wasRunning",wasRunning);
     }
 
     public void onClickStart(View view){
