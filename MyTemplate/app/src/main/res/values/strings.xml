@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyTemplate</string>
+    <string name="top_content">Thinks for choosing our awesome blend tea.How do you want it serving?</string>
+    <string name="button_desc">Templature:</string>
+    <string name="button_content">HOT</string>
+    <string name="milk">Milk</string>
+    <string name="suger">Suger</string>
+    <string name="lemon">Lemon</string>
+</resources>
