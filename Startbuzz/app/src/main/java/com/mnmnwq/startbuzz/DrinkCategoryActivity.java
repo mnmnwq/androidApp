@@ -13,7 +13,7 @@ public class DrinkCategoryActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_drink_category);
         ListView listDrinks = getListView();
-        ArrayAdapter<Drink> listAdapter = new ArrayAdapter<Drink>(this,android.R.layout.simple_list_item_1.Drink.drinks);
+        ArrayAdapter<Drink> listAdapter = new ArrayAdapter<Drink>(this,android.R.layout.simple_list_item_1,Drink.drinks);
         listDrinks.setAdapter(listAdapter);
     }
 }
